@@ -1,0 +1,306 @@
+/**
+ * EduQuiz Web Frontend — Figma Design Tokens (Phase 1A)
+ * Source: Figma file "Final-Project-2" (fileKey: pmB8oYFGjfcwEuNlrGJ607)
+ * Verified via Figma MCP (get_metadata, get_design_context, get_variable_defs).
+ *
+ * NOTE:
+ * - File Figma khong khai bao Local Variable ID hay Shared Text Style ID.
+ * - Moi gia tri duoi day duoc trich xuat truc tiep tu layer/node thuc te tren Figma
+ *   kem Node ID doi chieu. Khong suy dien gia tri ngoai thiet ke.
+ * - Toan bo bien su dung tien to `--eq-` de co lap tuyet doi voi CSS Landing Page (`/`).
+ */
+
+:root {
+  /* =========================================================================
+   * 1. COLOR PALETTE — BACKGROUNDS, SURFACES, BRAND, PRIMARY, BORDERS, TEXT
+   * ========================================================================= */
+
+  /* Page & Surface Backgrounds */
+  --eq-bg-page: #f9fbff;                    /* Nodes: 26:3, 97:190, 167:176, 354:3207 */
+  --eq-bg-user-page: #edf2f8;               /* User Web calm blue-gray canvas for clear card/sidebar hierarchy */
+  --eq-bg-user-surface-subtle: #f4f7fb;     /* Nested inner cards inside white User surfaces */
+  --eq-bg-page-features: #f8faff;           /* Node: 51:1242 (Onboarding Features) */
+  --eq-bg-admin-android: #f5f7fc;           /* Nodes: 444:768, 444:1039 (Admin Android 12..20) */
+  --eq-bg-surface: #ffffff;                 /* Nodes: 16:16, 174:208, 181:447, 354:3851 */
+  --eq-bg-surface-soft: #e8f0ff;            /* Nodes: 354:3854, 354:3867, 444:788, 444:1068 */
+  --eq-bg-surface-selected: #dbe3ff;        /* Node: 65:246 (Onboarding Level selected card) */
+  --eq-bg-segment-track: #e4eaf6;           /* Node: 281:1474 (SoLuong / Do kho track) */
+  --eq-bg-progress-track: #d9d9d9;          /* Nodes: 91:101, 91:113, 97:253, 97:261 */
+  --eq-bg-neutral-track: #e3e8f0;           /* Nodes: 354:3884, 354:3888, 444:1073 */
+  --eq-bg-google-btn: rgba(217, 217, 217, 0.56); /* Node: 97:176 (Login Modal Google button) */
+
+  /* Overlays / Backdrops */
+  --eq-overlay-modal: rgba(0, 0, 0, 0.4);   /* Nodes: 94:159 (Login backdrop), 200:2926 (Con5Cau) */
+  --eq-overlay-toast: rgba(0, 0, 0, 0.5);   /* Node: 162:165 (Notification popup) */
+
+  /* Brand Identity */
+  --eq-brand-edu: #413f3f;                  /* Nodes: 26:4, 51:2490, 97:192, 354:3207 ("Edu") */
+  --eq-brand-quiz: #8ea6ff;                 /* Nodes: 26:4, 51:2490, 55:32, 97:192 ("Quiz") */
+  --eq-brand-quiz-alt: #6b8aff;             /* Node: 97:192 variant */
+
+  /* Primary & Interactive Actions */
+  --eq-primary-onboarding: #6b9bff;         /* Nodes: 26:34, 34:112, 51:1250, 55:130 */
+  --eq-primary-create: #52a2ff;             /* Node: 184:523 (Nut "Tao Quiz") */
+  --eq-primary-chip: #319bff;               /* Node: 174:209 (Active Filter Chip "Tat ca") */
+  --eq-primary-banner: #3d8fef;             /* Nodes: 77:34, 97:197 (Banner button BG) */
+  --eq-primary-banner-text: #2f6bff;        /* Nodes: 113:434, 122:572 */
+  --eq-primary-action: #1f7ae0;             /* Nodes: 262:876, 262:903, 312:2818, 312:2826 */
+  --eq-primary-quiz: #0b6fa4;               /* Nodes: 190:1092, 192:1276, 197:1958, 200:2750 */
+  --eq-primary-quiz-soft: #e0f4ff;          /* Nodes: 197:1958 (Selected answer), 200:2735 (Unanswered chip) */
+  --eq-primary-admin: #2563eb;              /* Nodes: 354:3855, 354:3877, 444:771, 444:1090 */
+  --eq-primary-progress: #4657ad;           /* Nodes: 91:102, 91:114, 97:254, 97:262 */
+  --eq-primary-link: #0048ff;               /* Nodes: 83:36, 94:29, 97:217, 97:264 ("Xem tat ca") */
+  --eq-primary-link-strong: #000dff;        /* Node: 181:441 ("De cua toi") */
+  --eq-primary-accent-indigo: #2a2fd6;      /* Node: 190:1084 */
+  --eq-primary-accent-blue: #1d5fb8;        /* Nodes: 312:2822, 312:2830 */
+  --eq-primary-accent-sky: #4671ff;         /* Node: 197:2071 */
+
+  /* Onboarding Section Badge & Timeline Accents */
+  --eq-onboarding-badge-bg: #254786;        /* Node: 51:2487 (Badge SVG fill) */
+  --eq-onboarding-badge-text: #85abf8;      /* Nodes: 51:2488, 55:31, 65:225 */
+  --eq-onboarding-dot-inactive: #b1b1b1;    /* Nodes: 26:35..38, 51:1244, 55:124 */
+  --eq-onboarding-step1-text: #9fc0ff;      /* Node: 55:52 */
+  --eq-onboarding-step2-text: #baacff;      /* Node: 58:2 */
+
+  /* Borders */
+  --eq-border-default: #e2e8f0;             /* Node: 197:1958 (Answer option card stroke) */
+  --eq-border-user-card: #d9e3f0;           /* Crisp subtle border separating white User cards on --eq-bg-user-page */
+  --eq-border-card-subtle: #eaeaea;         /* Nodes: 181:447, 181:489 (ExamCard border) */
+  --eq-border-card-level: #e2e2e2;          /* Nodes: 65:238, 65:257 (Unselected level card) */
+  --eq-border-selected-level: #83adfa;      /* Node: 65:246 (Selected level card border) */
+  --eq-border-btn-secondary: #cbd5e1;       /* Node: 200:2752 ("Van nop bai" stroke) */
+  --eq-border-continue-card: #676464;       /* Nodes: 88:94, 91:108, 97:248, 97:256 */
+
+  /* Text Hierarchy */
+  --eq-text-black: #000000;                 /* Nodes: 51:2504, 162:168, 167:203, 181:443 */
+  --eq-text-primary: #111827;               /* Nodes: 190:1088, 190:1091, 197:2037, 200:2730 */
+  --eq-text-admin-primary: #1c2940;         /* Nodes: 354:3840, 354:3853, 444:772, 444:1040 */
+  --eq-text-secondary: #374151;             /* Nodes: 190:1093, 197:2040, 200:2731, 200:2753 */
+  --eq-text-body-dark: rgba(0, 0, 0, 0.8);  /* Node: 167:204 */
+  --eq-text-welcome: rgba(0, 0, 0, 0.76);   /* Node: 26:4 */
+  --eq-text-timestamp: rgba(0, 0, 0, 0.67); /* Node: 162:173 */
+  --eq-text-muted: #4b5563;                 /* Nodes: 190:1096, 197:2038, 200:2733 */
+  --eq-text-muted-alt: #4a4a4a;             /* Node: 192:1388 */
+  --eq-text-muted-neutral: #656565;         /* Nodes: 41:28, 51:2477, 65:222 ("Bo qua") */
+  --eq-text-meta: #676767;                  /* Nodes: 181:461, 181:471, 181:491, 181:502 */
+  --eq-text-slate: #64748b;                 /* Node: 326:3967 */
+  --eq-text-gray: #6b7280;                  /* Node: 197:2064 */
+  --eq-text-admin-muted: #6e7d94;           /* Nodes: 354:3841, 354:3852, 444:773, 444:1044 */
+  --eq-text-placeholder: rgba(0, 0, 0, 0.3);/* Node: 174:207 (Search placeholder) */
+  --eq-text-disabled-muted: #a9a8a8;        /* Node: 281:1695 */
+  --eq-text-on-primary: #ffffff;            /* Nodes: 36:123, 184:527, 200:2751, 326:4240 */
+  --eq-text-indigo-dark: #3730a3;           /* Nodes: 190:1090, 239:739, 239:772 */
+
+  /* AI Proctoring Dark Surface Palette (EduQuiz_GiamSatAI — Node 326:4235) */
+  --eq-proctoring-bg: #1c1d20;              /* Node: 326:4235 (Dark screen SVG fill) */
+  --eq-proctoring-card: #2a2c31;            /* Nodes: 326:4243 (Camera frame), 326:4252 (Rules box) */
+  --eq-proctoring-btn-disabled-bg: #3a3f4b; /* Node: 326:4266 (Disabled Start button fill) */
+  --eq-proctoring-btn-disabled-text: #8a91a0;/* Node: 326:4267 */
+  --eq-proctoring-text-muted: #b4b9c4;      /* Nodes: 326:4241, 326:4245, 326:4250, 326:4256 */
+  --eq-proctoring-link: #7cb4f5;            /* Node: 326:4265 ("Hinh anh cua ban duoc dung de lam gi?") */
+  --eq-proctoring-live-bg: #14301f;         /* Node: 326:4246 ("Dang giam sat" pill fill) */
+  --eq-proctoring-live-dot: #4ade80;        /* Node: 326:4247 (Live indicator dot) */
+  --eq-proctoring-live-text: #bbf7d0;       /* Node: 326:4248 ("Dang giam sat" text) */
+
+  /* =========================================================================
+   * 2. GRADIENTS (Hero Banners & Scroll Fades)
+   * ========================================================================= */
+
+  --eq-gradient-banner-1: linear-gradient(118.7deg, rgb(47, 107, 255) 1.96%, rgb(127, 178, 255) 98.14%); /* Nodes: 113:431, 122:569 */
+  --eq-gradient-banner-2: linear-gradient(118.7deg, rgb(255, 138, 31) 1.96%, rgb(255, 208, 77) 98.14%);  /* Node: 122:590 */
+  --eq-gradient-banner-3: linear-gradient(118.7deg, rgb(123, 63, 242) 1.96%, rgb(255, 126, 182) 98.14%); /* Node: 122:610 */
+  --eq-gradient-banner-back: linear-gradient(-58.62deg, rgb(116, 176, 254) 9.06%, rgb(196, 223, 249) 87.86%); /* Nodes: 78:101, 97:194, 122:589 */
+  --eq-gradient-banner-glass: linear-gradient(152.77deg, rgba(172, 215, 255, 0.8) 25.15%, rgba(0, 51, 255, 0.8) 90.7%); /* Node: 97:195 */
+  --eq-gradient-scroll-fade: linear-gradient(to top, #f9fbff 80.24%, rgba(249, 251, 255, 0.1) 95.38%); /* Node: 55:46 */
+
+  /* Hero Banner Tag & Accent Variants (Component Set 122:566) */
+  --eq-banner-1-tag-bg: #c7d8ff;            /* Nodes: 97:203, 113:439, 122:577 */
+  --eq-banner-1-tag-text: #0050ff;          /* Nodes: 97:204, 113:440, 122:578 */
+  --eq-banner-2-tag-bg: #ffdc7c;            /* Node: 122:598 */
+  --eq-banner-2-accent: #ff8a1f;            /* Nodes: 122:593, 122:599 */
+  --eq-banner-2-shadow-tint: rgba(255, 208, 77, 0.5); /* Node: 122:589 */
+  --eq-banner-3-tag-bg: #ff94c3;            /* Node: 122:618 */
+  --eq-banner-3-accent: #7b3ff2;            /* Nodes: 122:613, 122:619 */
+  --eq-banner-3-shadow-tint: rgba(123, 63, 242, 0.5); /* Node: 122:609 */
+
+  /* =========================================================================
+   * 3. SUBJECT COLORS, MODE CARDS & ONBOARDING ICON TILES
+   * ========================================================================= */
+
+  /* Home Mode Cards (Nodes: 83:69, 83:70, 97:208, 97:212) */
+  --eq-mode-practice-bg: #8bdcff;           /* Nodes: 83:69, 97:208 ("Luyen tap") */
+  --eq-mode-mock-exam-bg: #9b8fff;          /* Nodes: 83:70, 97:212 ("Thi thu") */
+
+  /* Home Category Tiles (Nodes: 83:38..77, 97:223..239) */
+  --eq-cat-math-bg: #74eaff;                /* Nodes: 83:38, 97:223 */
+  --eq-cat-literature-bg: #ffff6d;          /* Nodes: 83:44, 97:227 */
+  --eq-cat-chemistry-bg: rgba(253, 136, 136, 0.6); /* Nodes: 83:50, 97:231 */
+  --eq-cat-physics-bg: rgba(82, 244, 87, 0.6);     /* Nodes: 83:56, 97:235 */
+  --eq-cat-english-bg: rgba(82, 201, 244, 0.6);    /* Nodes: 83:77, 97:239 */
+
+  /* Subject Chips & Exam Badges (Nodes: 174:213..235, 181:453..499) */
+  --eq-subject-math-bg: #73e1ff;            /* Nodes: 174:213, 181:453, 181:456 */
+  --eq-subject-math-text: #024759;          /* Nodes: 174:214, 181:457 */
+  --eq-subject-literature-bg: #ffda72;      /* Node: 174:218 */
+  --eq-subject-literature-text: #816300;    /* Node: 174:219 */
+  --eq-subject-physics-bg: #ffa9a9;         /* Node: 174:222 */
+  --eq-subject-physics-text: #aa0000;       /* Node: 174:223 (#a00) */
+  --eq-subject-chemistry-bg: #a8fb97;       /* Nodes: 174:226, 181:493 */
+  --eq-subject-chemistry-text: #126900;     /* Nodes: 174:227, 181:494 */
+  --eq-subject-english-bg: #dfa7ff;         /* Node: 174:230 */
+  --eq-subject-english-text: #661596;       /* Node: 174:231 */
+  --eq-subject-history-bg: #ff71e0;         /* Node: 174:234 */
+  --eq-subject-history-text: #77035e;       /* Node: 174:235 */
+
+  /* Onboarding Feature & Education Level Icon Tiles (Nodes: 51:2498..2522, 65:254..268) */
+  --eq-tile-feature-blue: #446ebd;          /* Node: 51:2498 ("De thi da dang") */
+  --eq-tile-feature-purple: #2f2659;        /* Node: 51:2513 ("Bam sat chuong trinh") */
+  --eq-tile-feature-sage: #99a99b;          /* Node: 51:2522 ("Hoc moi luc, moi noi") */
+  --eq-tile-level-thcs: #5ac25a;            /* Node: 65:268 (THCS icon tile) */
+  --eq-tile-level-thpt: #8858ca;            /* Node: 65:254 (THPT icon tile) */
+  --eq-tile-level-uni: #6996d2;             /* Node: 65:263 (Dai hoc icon tile) */
+
+  /* =========================================================================
+   * 4. STATUS COLORS (Success, Warning, Danger, Featured/Hot)
+   * ========================================================================= */
+
+  /* Success / Correct Answer / Open Exam */
+  --eq-status-success-bg: #dcfce7;          /* Node: 239:800 (Correct answer box fill) */
+  --eq-status-success-bg-alt: #cff5c8;      /* Node: 181:499 (Exam card green tint) */
+  --eq-status-success-border: #16a34a;      /* Node: 239:800 (Correct answer stroke & badge) */
+  --eq-status-success-text: #166534;        /* Nodes: 215:4601, 239:757, 239:793 */
+  --eq-status-success-text-dark: #14532d;   /* Nodes: 312:2839, 318:3544, 326:3943 */
+  --eq-status-success-admin: #14a163;       /* Node: 354:3859 (Admin positive growth) */
+
+  /* Warning / Bookmark / Pending Review */
+  --eq-status-warning-text: #92400e;        /* Nodes: 192:1316, 200:2749 */
+  --eq-status-warning-text-dark: #713f12;   /* Nodes: 312:2845, 312:2851 */
+  --eq-status-warning-admin: #f59e1f;       /* Nodes: 444:799, 444:804 ("Cho xu ly") */
+
+  /* Danger / Wrong Answer / High Priority */
+  --eq-status-danger-bg: #ffe4e6;           /* Node: 239:800 (Wrong answer box fill) */
+  --eq-status-danger-bg-admin: #ffe8e8;     /* Node: 444:793 ("Uu tien" badge BG) */
+  --eq-status-danger-border: #e11d48;       /* Node: 239:800 (Wrong answer stroke) */
+  --eq-status-danger-text: #9f1239;         /* Nodes: 215:4605, 239:759, 239:763 */
+  --eq-status-danger-text-dark: #881337;    /* Node: 312:2863 */
+  --eq-status-danger-admin: #db3840;        /* Nodes: 354:3863, 444:785, 444:794 */
+
+  /* Popular / Hot / Featured Badges */
+  --eq-badge-popular-bg: #ffc973;           /* Node: 181:465 ("Pho bien") */
+  --eq-badge-popular-text: #865301;         /* Node: 181:466 */
+  --eq-badge-hot-bg: #ffd1a9;               /* Nodes: 94:36, 94:40, 97:272, 97:275 */
+  --eq-badge-hot-text: #d26725;             /* Nodes: 94:41, 97:276 ("Hot") */
+  --eq-badge-cta-orange-text: #ff7700;      /* Nodes: 94:37, 97:273 ("Lam ngay" #f70) */
+  --eq-badge-midterm-text: #b4500f;         /* Node: 318:3548 ("Giua ki") */
+  --eq-featured-card-bg: rgba(255, 210, 158, 0.5); /* Nodes: 94:31, 97:268 */
+
+  /* =========================================================================
+   * 5. TYPOGRAPHY — FONT FAMILY
+   * ========================================================================= */
+
+  --eq-font-body: 'Be Vietnam Pro', system-ui, -apple-system, sans-serif;   /* Nodes: 26:4, 167:204, 190:1084, 326:4241 */
+  --eq-font-heading: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; /* Nodes: 167:203, 181:443, 215:4594, 326:4240 */
+  --eq-font-admin: 'Inter', system-ui, -apple-system, sans-serif;           /* Nodes: 354:3840, 354:3853, 444:772, 444:1040 */
+
+  /* =========================================================================
+   * 6. TYPOGRAPHY — FONT SIZE & FONT WEIGHT
+   * ========================================================================= */
+
+  /* Font Sizes (verified directly from Figma nodes) */
+  --eq-text-3xs: 8px;                       /* Nodes: 91:105, 97:251, 162:173, 444:794 */
+  --eq-text-2xs: 9px;                       /* Nodes: 94:37, 97:273, 354:3855, 444:776 */
+  --eq-text-xs: 10px;                       /* Nodes: 79:109, 113:437, 354:3859, 444:773 */
+  --eq-text-chip: 11px;                     /* Nodes: 113:434, 174:210, 354:3852, 444:791 */
+  --eq-text-sm: 12px;                       /* Nodes: 162:170, 181:461, 190:1093, 326:4245 */
+  --eq-text-compact: 13px;                  /* Nodes: 190:1111, 197:2038, 326:4263, 444:1055 */
+  --eq-text-base: 14px;                     /* Nodes: 181:441, 192:1277, 326:4241, 354:3865 */
+  --eq-text-md: 15px;                       /* Nodes: 162:168, 197:2046, 215:4596 */
+  --eq-text-lg: 16px;                       /* Nodes: 36:123, 113:436, 167:204, 190:1097 */
+  --eq-text-card-title: 17px;               /* Nodes: 181:449, 190:1136, 262:958, 326:4267 */
+  --eq-text-xl: 18px;                       /* Nodes: 181:443, 190:1084, 192:1275, 444:772 */
+  --eq-text-2xl: 20px;                      /* Nodes: 41:26, 51:2504, 184:527, 354:3840 */
+  --eq-text-modal-title: 22px;              /* Nodes: 197:2037, 200:2730 */
+  --eq-text-kpi-sub: 23px;                  /* Nodes: 354:3858, 354:3862 */
+  --eq-text-3xl: 24px;                      /* Nodes: 55:52, 190:1091, 190:1092 */
+  --eq-text-4xl: 26px;                      /* Node: 215:4590 */
+  --eq-text-kpi-main: 27px;                 /* Node: 354:3853 */
+  --eq-text-screen-title: 30px;             /* Nodes: 167:203, 262:877, 312:2803, 326:4240 */
+  --eq-text-onboarding-sub: 38px;           /* Node: 51:2490 */
+  --eq-text-onboarding-h1: 40px;            /* Nodes: 55:32, 65:226 */
+  --eq-text-onboarding-brand: 45px;         /* Node: 51:2490 */
+  --eq-text-welcome-sub: 48px;              /* Node: 26:4 */
+  --eq-text-welcome-brand: 65px;            /* Node: 26:4 */
+  --eq-text-score-hero: 72px;               /* Node: 215:4594 */
+
+  /* Font Weights (verified from Figma font style suffixes) */
+  --eq-weight-extralight: 200;              /* Nodes: 41:28, 51:2477, 65:222 (Be_Vietnam_Pro:ExtraLight) */
+  --eq-weight-light: 300;                   /* Nodes: 41:26, 65:244, 86:85, 162:170 */
+  --eq-weight-regular: 400;                 /* Nodes: 167:204, 174:207, 354:3841 */
+  --eq-weight-medium: 500;                  /* Nodes: 26:4, 65:243, 181:441, 354:3855 */
+  --eq-weight-semibold: 600;                /* Nodes: 26:4, 36:123, 113:434, 181:449 */
+  --eq-weight-bold: 700;                    /* Nodes: 181:443, 190:1084, 215:4594, 354:3840 */
+  --eq-weight-extrabold: 800;               /* Node: 167:203 (Plus_Jakarta_Sans:ExtraBold) */
+
+  /* =========================================================================
+   * 7. SPACING & LAYOUT DIMENSIONS (Verified from Figma Frame Coordinates)
+   * ========================================================================= */
+
+  --eq-space-1: 4px;                        /* Small inline gaps */
+  --eq-space-2: 8px;                        /* Filter chip gap (Nodes: 174:209..234) */
+  --eq-space-3: 12px;                       /* Search input horizontal padding, card inner gap */
+  --eq-space-4: 16px;                       /* Admin Android horizontal margin (390px -> 358px, Node: 444:774) */
+  --eq-space-5: 20px;                       /* Onboarding card inner padding (Node: 51:2521) */
+  --eq-space-exam-gap: 21px;                /* Vertical gap between ExamCards (Nodes: 181:447 -> 181:489) */
+  --eq-space-6: 24px;                       /* Mobile iPhone Air horizontal padding (420px -> 372px, Node: 34:112) */
+
+  /* Reference Component & Canvas Dimensions */
+  --eq-canvas-mobile-ios: 420px;            /* Standard User & Admin 01..10 Figma frame width */
+  --eq-canvas-mobile-android: 390px;        /* Admin 11..20 Android Figma frame width */
+  --eq-content-max-mobile: 372px;           /* Standard inner width inside 420px frame (Node: 34:112) */
+  --eq-bottom-nav-height: 78px;             /* Component Set BottomNav height (Node: 181:313) */
+  --eq-btn-height-primary: 44px;            /* Primary CTA height (Nodes: 34:112, 184:523, 281:1474) */
+  --eq-input-search-height: 52px;           /* Exams search bar height (Node: 167:206) */
+  --eq-card-level-height: 74px;             /* Education level selection card height (Node: 65:238) */
+  --eq-card-mode-height: 73px;              /* Home Practice / Mock Exam card height (Nodes: 83:69, 83:70) */
+  --eq-card-continue-height: 64px;          /* Home Continue Study card height (Node: 91:108) */
+
+  /* =========================================================================
+   * 8. BORDER RADIUS
+   * ========================================================================= */
+
+  --eq-radius-xs: 5px;                      /* Nodes: 51:2498, 83:38, 162:165 */
+  --eq-radius-2xs: 6px;                     /* Nodes: 162:166, 354:3867 (Admin chart bars) */
+  --eq-radius-sm: 8px;                      /* Nodes: 97:203, 113:439, 167:206 (Search bar) */
+  --eq-radius-continue: 9px;                /* Nodes: 97:248, 444:788 */
+  --eq-radius-md: 10px;                     /* Nodes: 34:112, 51:2507, 444:786, 444:793 */
+  --eq-radius-admin-pill: 11px;             /* Node: 354:3854 */
+  --eq-radius-lg: 12px;                     /* Nodes: 83:69, 97:197, 113:433, 281:1694, 444:1068 */
+  --eq-radius-admin-card: 13px;             /* Nodes: 444:783, 444:790, 444:1054 */
+  --eq-radius-banner: 14px;                 /* Nodes: 97:195, 113:431, 354:3851 */
+  --eq-radius-cta: 15px;                    /* Nodes: 65:238, 94:31, 184:523 */
+  --eq-radius-card: 16px;                   /* Nodes: 181:447, 181:453, 181:489, 181:499 */
+  --eq-radius-admin-nav: 18px;              /* Nodes: 386:960, 444:774, 444:1045 */
+  --eq-radius-btn-pill: 20px;               /* Nodes: 94:36, 97:272 */
+  --eq-radius-sheet: 24px;                  /* Node: 16:16 (BottomNav top radius) */
+  --eq-radius-modal: 25px;                  /* Node: 97:173 (Login modal) */
+  --eq-radius-chip: 28px;                   /* Nodes: 174:209, 174:213, 174:218 */
+  --eq-radius-google-btn: 30px;             /* Node: 97:175 */
+  --eq-radius-frame: 46px;                  /* Nodes: 26:3, 51:1242, 65:221, 97:190, 167:176, 354:3207 */
+  --eq-radius-full: 9999px;                 /* Nodes: 26:34 (100px), 162:30 (99px) */
+
+  /* =========================================================================
+   * 9. BOX SHADOW & BACKDROP EFFECTS
+   * ========================================================================= */
+
+  --eq-shadow-nav: 0px 0px 16px 0px rgba(19, 44, 74, 0.05);     /* Node: 16:16 (BottomNav) */
+  --eq-shadow-nav-alt: 5px 0px 20px 0px rgba(19, 44, 74, 0.05); /* Node: I77:49;16:16 */
+  --eq-shadow-banner: 0px 6px 16px 0px rgba(19, 44, 74, 0.05);  /* Nodes: 77:30, 97:195, 113:431 */
+  --eq-shadow-segment: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);     /* Node: 281:1694 */
+  --eq-shadow-card: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);        /* Nodes: 51:2507, 51:2511, 51:2520 */
+  --eq-shadow-search: 0px 4px 4.5px 0px rgba(0, 0, 0, 0.25);    /* Node: 174:208 */
+  --eq-shadow-continue: 0px 2px 8px 0px rgba(0, 0, 0, 0.25);    /* Nodes: 88:94, 91:108, 97:248 */
+  --eq-shadow-google-btn: 0px 4px 2px 0px rgba(0, 0, 0, 0.25);  /* Node: 97:175 */
+  --eq-shadow-user-card: 0 2px 10px rgba(19, 44, 74, 0.055), 0 1px 2px rgba(19, 44, 74, 0.035);
+  --eq-shadow-user-card-hover: 0 8px 20px rgba(19, 44, 74, 0.09), 0 2px 6px rgba(19, 44, 74, 0.04);
+  --eq-blur-overlay: blur(4px);                                 /* Nodes: 162:165, 200:2926 */
+}
