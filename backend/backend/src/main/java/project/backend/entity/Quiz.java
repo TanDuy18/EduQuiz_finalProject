@@ -52,4 +52,17 @@ public class Quiz {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private QuizStatus quizStatus = QuizStatus.DRAFT;
+
+    @Column(name = "duration_minutes")
+    private Integer durationMinutes = 45; // thời gian làm bài (phút)
+
+    @Column(name = "rating_avg")
+    private Double ratingAvg = 0.0; // điểm đánh giá trung bình (denormalized)
+
+    @Column(name = "rating_count")
+    private Integer ratingCount = 0;
+
+    @Column(name = "play_count")
+    private Integer playCount = 0; // số lượt làm
+
 }

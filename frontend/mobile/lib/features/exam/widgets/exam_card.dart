@@ -22,33 +22,47 @@ class SubjectStyle {
 
 const kSubjectStyles = {
   'Toán': SubjectStyle(
-    chip: Color(0xFF73E1FF), chipText: Color(0xFF024759),
-    tile: Color(0xFF73E1FF), icon: Icons.calculate_rounded,
-    iconColor: Color(0xFF2C7BE5), asset: 'assets/images/exams/math.png',
+    chip: Color(0xFF73E1FF),
+    chipText: Color(0xFF024759),
+    tile: Color(0xFF73E1FF),
+    icon: Icons.calculate_rounded,
+    iconColor: Color(0xFF2C7BE5),
+    asset: 'assets/images/exams/math.png',
   ),
   'Ngữ văn': SubjectStyle(
-    chip: Color(0xFFFFDA72), chipText: Color(0xFF816300),
-    tile: Color(0xFFFFF1B8), icon: Icons.history_edu_rounded,
+    chip: Color(0xFFFFDA72),
+    chipText: Color(0xFF816300),
+    tile: Color(0xFFFFF1B8),
+    icon: Icons.history_edu_rounded,
     iconColor: Color(0xFFB7791F),
   ),
   'Hoá học': SubjectStyle(
-    chip: Color(0xFFFFA9A9), chipText: Color(0xFFAA0000),
-    tile: Color(0xFFFFD0D6), icon: Icons.science_rounded,
+    chip: Color(0xFFFFA9A9),
+    chipText: Color(0xFFAA0000),
+    tile: Color(0xFFFFD0D6),
+    icon: Icons.science_rounded,
     iconColor: Color(0xFFD9477A),
   ),
   'Vật lý': SubjectStyle(
-    chip: Color(0xFFA8FB97), chipText: Color(0xFF126900),
-    tile: Color(0xFFCFF5C8), icon: Icons.bolt_rounded,
-    iconColor: Color(0xFF126900), asset: 'assets/images/exams/atom.png',
+    chip: Color(0xFFA8FB97),
+    chipText: Color(0xFF126900),
+    tile: Color(0xFFCFF5C8),
+    icon: Icons.bolt_rounded,
+    iconColor: Color(0xFF126900),
+    asset: 'assets/images/exams/atom.png',
   ),
   'Ngoại ngữ': SubjectStyle(
-    chip: Color(0xFFDFA7FF), chipText: Color(0xFF661596),
-    tile: Color(0xFFEBD4FF), icon: Icons.public_rounded,
+    chip: Color(0xFFDFA7FF),
+    chipText: Color(0xFF661596),
+    tile: Color(0xFFEBD4FF),
+    icon: Icons.public_rounded,
     iconColor: Color(0xFF661596),
   ),
   'Lịch sử': SubjectStyle(
-    chip: Color(0xFFFF71E0), chipText: Color(0xFF77035E),
-    tile: Color(0xFFFFC9F1), icon: Icons.account_balance_rounded,
+    chip: Color(0xFFFF71E0),
+    chipText: Color(0xFF77035E),
+    tile: Color(0xFFFFC9F1),
+    icon: Icons.account_balance_rounded,
     iconColor: Color(0xFF77035E),
   ),
 };
@@ -83,16 +97,16 @@ class ExamCard extends StatelessWidget {
 
   static const _grey = Color(0xFF676767);
 
-  Widget _pill(String text, Color bg, Color fg) => Container(
-        height: 17.6,
-        padding: const EdgeInsets.symmetric(horizontal: 7),
-        alignment: Alignment.center,
-        decoration: BoxDecoration(
-          color: bg,
-          borderRadius: BorderRadius.circular(28),
-        ),
-        child: Text(text, style: AppTheme.body(size: 11, color: fg, height: 1.1)),
-      );
+  Widget _pill(String text, Color bg, Color fg) => DecoratedBox(
+    decoration: BoxDecoration(
+      color: bg,
+      borderRadius: BorderRadius.circular(28),
+    ),
+    child: Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2.2),
+      child: Text(text, style: AppTheme.body(size: 12, color: fg, height: 1.2)),
+    ),
+  );
 
   Widget _tileIcon(SubjectStyle s) {
     final fallback = Icon(s.icon, size: 44, color: s.iconColor);
@@ -149,8 +163,11 @@ class ExamCard extends StatelessWidget {
                             children: [
                               _pill(exam.subject, style.chip, style.chipText),
                               if (exam.popular)
-                                _pill('Phổ biến', const Color(0xFFFFC973),
-                                    const Color(0xFF865301)),
+                                _pill(
+                                  'Phổ biến',
+                                  const Color(0xFFFFC973),
+                                  const Color(0xFF865301),
+                                ),
                             ],
                           ),
                           const SizedBox(height: 9),
@@ -177,8 +194,11 @@ class ExamCard extends StatelessWidget {
                           Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
-                              const Icon(Icons.star_rounded,
-                                  size: 14, color: Color(0xFFFFC107)),
+                              const Icon(
+                                Icons.star_rounded,
+                                size: 14,
+                                color: Color(0xFFFFC107),
+                              ),
                               const SizedBox(width: 3),
                               Text.rich(
                                 TextSpan(
@@ -190,7 +210,9 @@ class ExamCard extends StatelessWidget {
                                   children: [
                                     TextSpan(
                                       text: exam.rating,
-                                      style: const TextStyle(color: Colors.black),
+                                      style: const TextStyle(
+                                        color: Colors.black,
+                                      ),
                                     ),
                                     TextSpan(
                                       text:

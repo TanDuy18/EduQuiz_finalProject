@@ -199,32 +199,6 @@ class _ExamsPageState extends ConsumerState<ExamsPage> {
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(24, 8, 24, 20),
-              child: SizedBox(
-                width: double.infinity,
-                height: 44,
-                child: FilledButton(
-                  onPressed: () {}, // TODO: mở màn tạo Quiz
-                  style: FilledButton.styleFrom(
-                    backgroundColor: const Color(0xFF52A2FF),
-                    foregroundColor: Colors.white,
-                    padding: EdgeInsets.zero,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                  ),
-                  child: Text(
-                    'Tạo Quiz',
-                    style: AppTheme.heading(
-                      size: 20,
-                      color: Colors.white,
-                      fontWeight: FontWeight.w700,
-                    ),
-                  ),
-                ),
-              ),
-            ),
           ],
         ),
       ),
